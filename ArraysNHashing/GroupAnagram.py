@@ -3,11 +3,11 @@ class Solution:
     def groupAnagrams(self, strs):
         ans = {}
         for s in strs:
-            count = [0] * 26
-            for c in s:
-                count[ord(c) - ord('a')] += 1
+            count = [0] * 26 # table of alphabet
+            for c in s: # map a word into ordered table
+                count[ord(c) - ord('a')] += 1 
             count = tuple(count)
-            if count in ans:
+            if count in ans: # if the table is already on ans
                 ans[count].append(s)
             else:
                 ans[count] = []
