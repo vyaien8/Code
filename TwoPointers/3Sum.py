@@ -3,12 +3,12 @@ class Solution:
         res = []
         nums.sort()
         for i, a in enumerate(nums):
-            if a > 0:
+            if a > 0: # the left most must be negative because sum must equal 0
                 break
-            if i > 0 and a == nums[i - 1]:
+            if i > 0 and a == nums[i - 1]: # remove dupplicate
                 continue
             l, r = i + 1, len(nums) - 1
-            while l < r:
+            while l < r:    # two pointer to find the twosum equal -a
                 s = a + nums[l] + nums[r]
                 if s > 0:
                     r -= 1
