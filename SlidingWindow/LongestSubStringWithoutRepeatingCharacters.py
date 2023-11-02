@@ -7,8 +7,8 @@ class Solution:
         l, r = 0, 1
         dic[s[l]] = l
         while r < len(s):
-            if s[r] in dic:
-                i = dic.get(s[r])
+            if s[r] in dic: # if has duplicate
+                i = dic.get(s[r]) # get index of duplicate
                 dic.pop(s[r])
                 if l <= i: # if the repeating character in range [l, r]
                     l = i + 1

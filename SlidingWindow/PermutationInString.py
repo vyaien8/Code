@@ -22,7 +22,7 @@ class Solution:
         return False
 
 s = Solution()
-if s.checkInclusion("ab", "hab"):
+if s.checkInclusion("aabc", "hbaaabc"):
     print("ok")
 else:
     print("NO")
