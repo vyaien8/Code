@@ -20,10 +20,28 @@ class Solution:
                 return True
             r += 1
         return False
+    
+    def checkInclude(self, s1: str, s2: str):
+        l1, l2 = len(s1), len(s2)
+        if l1 > l2:
+            return False
+        dic1, dic2 = {}, {}
+        for i in range(l1):
+            dic1[s1[i]] = dic1.get(s1[i], 0) + 1
+            dic2[s2[i]] = dic2.get(s2[i], 0) + 1
+        if dic1 == dic2:
+            return True
+        l = 0
+        for r in range(l1, l2):
+            dic2[s2[l]] -= 1
+            if dic2[s2[l]] == 0:
+                dic2.pop(s2[l])
+            l += 1
+            dic2[s2[r]] = dic2.get(s2[r], 0) + 1
+            if dic1 == dic2:
+                return True
+        return False
+    
+test = Solution()
+print(test.checkInclude("ab", "edibaooo"))
 
-s = Solution()
-if s.checkInclusion("aabc", "hbaaabc"):
-    print("ok")
-else:
-    print("NO")
-            
