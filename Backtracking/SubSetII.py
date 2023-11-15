@@ -13,7 +13,7 @@ class Solution:
             bk(i + 1, subset)
             subset.pop()
             # subset not include any nums[i]
-            while i + 1 < len(nums) and nums[i] == nums[i + 1]:
+            while i + 1 < len(nums) and nums[i] == nums[i + 1]: # find the last index of nums[i]
                 i += 1
             bk(i + 1, subset)
             # bk(i + 1, subset)

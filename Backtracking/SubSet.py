@@ -13,7 +13,7 @@ class Solution:
 
             subset.append(nums[i]) # add it
             dfs(i + 1)
-            subset.pop() #backtrack to go into not add it
+            subset.pop() # backtrack to go into not add it
             dfs(i + 1)
         dfs(0)
         return res
