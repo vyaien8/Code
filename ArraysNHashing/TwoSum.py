@@ -3,7 +3,7 @@ class Solution(object):
         # using dictionary
         preDic = {}
         for i, v in enumerate(a):
-            diff = sum = v
+            diff = sum - v
             if diff in preDic:
                 return [preDic[diff], i]
             preDic[v] = i 
