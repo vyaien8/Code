@@ -4,7 +4,7 @@ class Solution:
             return ""
         dic = {} # character map of t
         window = {}
-        for c in range(t):
+        for c in t:
             dic[c] = dic.get(c, 0) + 1
         need = len(dic) # number of distince character in s
         have = 0 # number character in window satisfy 
